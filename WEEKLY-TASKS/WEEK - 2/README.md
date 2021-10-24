@@ -10,8 +10,9 @@
 - [x] Write a C program to find power of a number using for loop.
 - [x] Write a C program to calculate the number of zeros at the end of the decimal form of number N!
 
+<br/>
 
 ## Additional Tasks
 
-- [ ] Write a program in C to display n terms of natural number and display sum of odd numbers as well as even numbers separately.
-- [ ] Write a program in C to find the prime numbers within a range of numbers
+- [x] Write a program in C to display n terms of natural number and display sum of odd numbers as well as even numbers separately.
+- [x] Write a program in C to find the prime numbers within a range of numbers
