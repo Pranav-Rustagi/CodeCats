@@ -1,7 +1,6 @@
 // Calculate the number of zeros at the end of the decimal form of number N!
 
 #include <stdio.h>
-#include <math.h>
 
 int countTrailingZeros(int num);
 
@@ -14,13 +13,10 @@ int main() {
 }
 
 int countTrailingZeros(int num) {
-    int maxPow = 0, res = 0;
-    while(num >= pow(5, maxPow))
-        maxPow++;
-    maxPow--;
-    
-    while(maxPow)
-        res += num / pow(5, maxPow--);
-    
+    int temp = 5, res = 0;
+    while(num >= temp) {
+        res += num / temp;
+        temp *= 5;
+    }
     return res;
 }
