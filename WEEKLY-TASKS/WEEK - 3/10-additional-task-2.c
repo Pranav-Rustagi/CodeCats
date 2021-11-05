@@ -4,7 +4,8 @@
 #include <stdlib.h>
 
 void main() {
-    int N, *arr, max, min, secondMax = -1, secondMin = -1;
+    int N, *arr, max, min, secondMax, secondMin;
+    short secondMaxInitialized = 0, secondMinInitialized = 0;
     printf("\n\nEnter number of elements : ");
     scanf("%d", &N);
     arr = malloc(N * sizeof(int));
@@ -26,10 +27,23 @@ void main() {
                 min = arr[i];
             }
 
-            if(arr[i] < max && (secondMax == -1 || arr[i] > secondMax))
-                secondMax = arr[i];
-            if(arr[i] > min && (secondMin == -1 || arr[i] < secondMin))
-                secondMin = arr[i];
+            if(arr[i] < max) {
+                if(secondMaxInitialized == 0) {
+                    secondMax = arr[i];
+                    secondMaxInitialized = 1;
+                }
+                else if(arr[i] > secondMax)
+                    secondMax = arr[i];
+            }
+
+            if(arr[i] > min) {
+                if(secondMinInitialized == 0) {
+                    secondMin = arr[i];
+                    secondMinInitialized = 1;
+                }
+                else if(arr[i] < secondMin)
+                    secondMin = arr[i];
+            }
         }
     }
 
